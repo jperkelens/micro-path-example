@@ -1,0 +1,9 @@
+package: github.com/jperkelens/micro-path-example/server
+import:
+- package: github.com/jperkelens/micro-example
+  subpackages:
+  - proto
+- package: github.com/micro/go-grpc
+  version: v0.1.0
+- package: github.com/micro/go-micro
+  version: v0.5.0
