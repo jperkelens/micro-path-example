@@ -6,7 +6,7 @@ _build-micro:
 		go build -i -o micro main.go plugins.go
 		mv $$GOPATH/src/github.com/micro/micro/micro $$GOPATH/bin
 
-build: clean lint
+build: clean
 	cd server && CGO_ENABLED=0 go build -a -installsuffix cgo -o main main.go
 
 build-linux: clean lint
@@ -29,7 +29,7 @@ config-local:
 		gopkg.in/alecthomas/gometalinter.v2 
 	gometalinter.v2 --install
 	$(MAKE) _build-micro
-	glide install
+	cd server && glide install
 	cd client && yarn install
 
 lint:
